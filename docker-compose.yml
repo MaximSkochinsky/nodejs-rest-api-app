@@ -1,0 +1,26 @@
+version: '3.7'
+
+services:
+  api:
+    image: nodejs-rest-api-app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3081:3081"
+    depends_on:
+      - database
+
+  database:
+    image: postgres:13
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: postgres
+    volumes:
+      - db-volume:/var/lib/postgresql/data
+
+volumes:
+  db-volume:
