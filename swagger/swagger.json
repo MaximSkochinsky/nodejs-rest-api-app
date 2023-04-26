@@ -279,7 +279,7 @@
         "/pdf" : {
             "post" : {
                 "summary" : "Generate pdf",
-                "description": "Generate pdf",
+                "description": "Generate pdf (final version of file will be added to 'pdf' directory)",
                 "produces": ["application/json"],
                 "consumes": ["application/json"],
                 "security": [ { "bearerAuth": [] } ],
@@ -307,7 +307,7 @@
         "/image" : {
             "post" : {
                 "summary" : "Load Image on server",
-                "description": "Load Image on server",
+                "description": "Load Image on server (final version of file will be added to 'uploads' directory)",
                 "consumes": ["form-data"],
                 "parameters": [
                     {
